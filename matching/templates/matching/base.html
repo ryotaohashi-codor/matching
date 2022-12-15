@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>マッチングトップ</title>
+    <link rel="stylesheet" href="{% static 'matching/style.css' %}" />
+  </head>
+
+  <body>
+    <div id="js-toast" class="toast">トースト</div>
+
+    <header id="header">
+      <div class="container" id="header-inner">
+        <h1 id="title">
+          <a href="{% url 'matching:top' %}">Title</a>
+        </h1>
+        <ul id="menu">
+          {% if user.is_authenticated %}
+          <li>
+            <a href="{% url 'matching:matching_users' %}">matched</a>
+          </li>
+          <li>
+            <a href="{% url 'matching:like_users' %}">liked</a>
+          </li>
+          <li>
+            <a href="{% url 'account_logout' %}">logout</a>
+          </li>
+          {% endif %}
+        </ul>
+      </div>
+    </header>
+
+    <div class="container">{% block content %}{% endblock %}</div>
+
+    <script src="{% static 'matching/main.js' %}"></script>
+    {% block extra_js %}{% endblock %}
+  </body>
+</html>

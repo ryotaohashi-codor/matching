@@ -1,0 +1,55 @@
+{% extends 'matching/base.html' %}
+{% load static %}
+
+{% block content %}
+{% for user in user_list %}
+<div class="row">
+    {% if user.image %}
+    <img src="{{ user.image.url }}" class="image1">
+    {% else %}
+    <img src="{% static 'matching/noimage.png' %}" class="image1">
+    {% endif %}
+
+    <div class="right">
+        <span class="name">{{ user.username }}</span>
+        <button type="button" data-id="{{ user.id }}" class="like">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 100 100">
+                <path stroke="#ff00ba" fill="#ff00ba" stroke-width="5"
+                    d="M 8,30 A 21,21 0,0,1 50,30 A 21,21 0,0,1 92,30 Q 94.43, 61.91 50,81 Q 5.57, 61.91 8,30 z" />
+            </svg>
+
+        </button>
+    </div>
+
+</div>
+
+{% endfor %}
+{% endblock %}
+
+
+{% block extra_js %}
+<script>
+    for (const button of document.getElementsByClassName('like')) {
+        button.addEventListener('click', () => {
+            fetch(`/api/like/`, {
+                    method: 'POST',
+                    body: `id=${button.dataset.id}`,
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
+                        'X-CSRFToken': csrftoken,
+                    },
+                })
+                .then((response) => response.json())
+                .then((data) => {
+                    button.parentNode.parentNode.remove()
+
+                    if (data['is_matching']) {
+                        showToast('success', 'マッチ成立しました！')
+                    } else {
+                        showToast('success', 'お気に入りしました！！')
+                    }
+                })
+        })
+    }
+</script>
+{% endblock %}

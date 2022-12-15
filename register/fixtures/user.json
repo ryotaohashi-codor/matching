@@ -1,0 +1,78 @@
+[
+    {
+        "model": "register.user",
+        "pk": 1,
+        "fields": {
+            "password": "pbkdf2_sha256$320000$Quxjsxlz2mIMjxZPcSulnb$bgI36U1sAdV17QQ+Rf9FjwL6cszX6CbSxTNQAErBvK8=",
+            "last_login": "2022-11-18T06:24:42Z",
+            "is_superuser": true,
+            "username": "admin",
+            "first_name": "",
+            "last_name": "",
+            "email": "a@a.com",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2022-11-13T06:41:28Z",
+            "groups": [],
+            "user_permissions": [],
+            "likes": []
+        }
+    },
+    {
+        "model": "register.user",
+        "pk": 2,
+        "fields": {
+            "password": "pbkdf2_sha256$320000$xuDM4icZNMvnOkHS9uiQfr$DWntG1bcFEgWZzNTt615zxRgrH/5o7yzSCoO7drctnc=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "narinari",
+            "first_name": "",
+            "last_name": "",
+            "email": "admin@a.com",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2022-11-13T06:45:02.828Z",
+            "groups": [],
+            "user_permissions": [],
+            "likes": []
+        }
+    },
+    {
+        "model": "register.user",
+        "pk": 3,
+        "fields": {
+            "password": "pbkdf2_sha256$320000$WsJgCDhfmj2he5Qj2Fl1ik$iyhh1ob89Lyu2cRC/kSx4CEivuhNqO7OYAO9QSgdXJU=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "takizawa",
+            "first_name": "",
+            "last_name": "",
+            "email": "narito@a.com",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2022-11-13T06:45:34.926Z",
+            "groups": [],
+            "user_permissions": [],
+            "likes": []
+        }
+    },
+    {
+        "model": "register.user",
+        "pk": 4,
+        "fields": {
+            "password": "pbkdf2_sha256$320000$ooSBCygXmDvGwZ34wVsGkw$0t5PSd7/GDslHHKM6MOwljG0IYEkwhMdaf6/IfULpMg=",
+            "last_login": "2022-11-13T06:46:35.694Z",
+            "is_superuser": false,
+            "username": "narito",
+            "first_name": "",
+            "last_name": "",
+            "email": "takizawa@a.com",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2022-11-13T06:46:35.443Z",
+            "groups": [],
+            "user_permissions": [],
+            "likes": []
+        }
+    }
+]
